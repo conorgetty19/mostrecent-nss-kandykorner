@@ -1,0 +1,23 @@
+
+.products {
+    display: flex;
+    height: 180px;
+    width: 550px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    background-color: rgb(243, 230, 255);
+    border: 1px dotted darkmagenta;
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    width: 100px;
+}
