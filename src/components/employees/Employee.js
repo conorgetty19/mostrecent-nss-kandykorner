@@ -11,7 +11,7 @@ export const Employee = ({ employee, getAllEmployees }) => {
             fetch(`http://localhost:8088/employees/${employee.id}`)
                 .then(res => res.json())
                 .then((employee) => {
-                    setUserId(employee.usersId)
+                    setUserId(employee.userId)
                 })
         },
         []
@@ -35,12 +35,12 @@ export const Employee = ({ employee, getAllEmployees }) => {
     }
 
     return (<><section className="employee">
-        <header>{employee?.users?.fullName}</header>
+        <header>{employee?.user?.fullName}</header>
         <ul>
             <li>Location: {employee?.locations?.address}</li>
             <li>Hourly Rate: {employee?.payRate}</li>
             <li>Start Date: {employee?.startDate}</li>
         </ul>
-        <button onClick={(clickEvent) => deleteEmployeeClickEvent(clickEvent)}>🔥{employee?.users?.fullName}</button>
+        <button onClick={(clickEvent) => deleteEmployeeClickEvent(clickEvent)}>🔥{employee?.user?.fullName}</button>
     </section></>)
 }

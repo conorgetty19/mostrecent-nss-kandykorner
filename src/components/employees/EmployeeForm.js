@@ -22,7 +22,7 @@ export const EmployeeForm = () => {
     )
 
     //set default values for employee state object (empty spots for each form value. cannot be undefined)
-    //(startDate, payRate, locationId, and appropriate usersId) and (fullName, email, isStaff=true)
+    //(startDate, payRate, locationId, and appropriate userId) and (fullName, email, isStaff=true)
     const [employee, update] = useState({
         fullName: "",
         locationId: 0,
@@ -51,7 +51,7 @@ export const EmployeeForm = () => {
         const employeeToSendToAPI = {
             startDate: employee.startDate,
             payRate: parseFloat(employee.payRate, 2),
-            locationsId: parseInt(employee.locationId)
+            locationId: parseInt(employee.locationId)
         }
 
         //POST user object
@@ -67,7 +67,7 @@ export const EmployeeForm = () => {
             .then(res => res.json())
             .then(
                 (response) => {
-                    employeeToSendToAPI.usersId = response.id
+                    employeeToSendToAPI.userId = response.id
                     fetch(`http://localhost:8088/employees`, {
                         method: "POST",
                         headers: {

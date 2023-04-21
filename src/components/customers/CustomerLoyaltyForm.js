@@ -14,7 +14,7 @@ export const CustomerLoyaltyForm = () => {
 
     //get actual customer object and update state
     useEffect(() => {
-        fetch(`http://localhost:8088/customers?usersId=${customerId}`)
+        fetch(`http://localhost:8088/customers?userId=${customerId}`)
             .then(res => res.json())
             .then((data) => {
                 const customerObject = data[0]

@@ -12,7 +12,7 @@ export const PurchaseHistory = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/customers?_expand=users&usersId=${kandyUserObject.id}`)
+            fetch(`http://localhost:8088/customers?_expand=user&userId=${kandyUserObject.id}`)
                 .then(res => res.json())
                 .then((data) => {
                     const currentCustomerAndUser = data[0]

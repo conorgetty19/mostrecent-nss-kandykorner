@@ -8,7 +8,7 @@ export const CustomerDetails = () => {
     useEffect(
         () => {
 
-            fetch(`http://localhost:8088/customers?_expand=users&usersId=${customerId}`)
+            fetch(`http://localhost:8088/customers?_expand=user&userId=${customerId}`)
                 .then(res => res.json())
                 .then((data) => {
                     const singleCustomer = data[0]
@@ -19,8 +19,8 @@ export const CustomerDetails = () => {
     )
 
     return <section className="customer">
-        <header className="customer__header">{customer?.users?.fullName}</header>
-        <section>Email: {customer?.users?.email}</section>
+        <header className="customer__header">{customer?.user?.fullName}</header>
+        <section>Email: {customer?.user?.email}</section>
         <Link to={`/customers/${customerId}/edit`}>Loyalty Number: {customer.loyaltyNumber}</Link>
     </section>
 }

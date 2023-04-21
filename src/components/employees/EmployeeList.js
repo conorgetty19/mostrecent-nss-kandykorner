@@ -12,7 +12,7 @@ export const EmployeeList = () => {
     const kandyUserObject = JSON.parse(localKandyUser)
 
     const getAllEmployees = () => {
-        fetch(`http://localhost:8088/employees?_expand=users&_expand=locations`)
+        fetch(`http://localhost:8088/employees?_expand=user&_expand=location`)
             .then(res => res.json())
             .then((employeesArray) => {
                 setEmployees(employeesArray)
